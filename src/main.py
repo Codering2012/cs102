@@ -1,3 +1,8 @@
+#LƯU Ý
+#LƯU Ý
+#CHỈ CÓ THỂ CHẠY BẰNG TERMINAL Ở TRONG POWERSHELL
+#CHỈ CÓ THỂ CHẠY BẰNG TERMINAL Ở TRONG POWERSHELL
+
 import logging
 
 import pygame
@@ -9,7 +14,10 @@ from worlds.world_manager import WorldManager
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
+#LƯU Ý
+#LƯU Ý
+#CHỈ CÓ THỂ CHẠY BẰNG TERMINAL Ở TRONG POWERSHELL
+#CHỈ CÓ THỂ CHẠY BẰNG TERMINAL Ở TRONG POWERSHELL
 class GameManager:
     def __init__(self):
         logger.info("GameManager Initializing...")
@@ -35,7 +43,10 @@ class GameManager:
                     x=GameConfig.WIDTH - 80,
                     y=15,
                 )
-
+            # LƯU Ý
+            # LƯU Ý
+            # CHỈ CÓ THỂ CHẠY BẰNG TERMINAL Ở TRONG POWERSHELL
+            # CHỈ CÓ THỂ CHẠY BẰNG TERMINAL Ở TRONG POWERSHELL
             pygame.display.update()
             self.clock.tick(GameConfig.FPS)  # regulate max frame rate
 

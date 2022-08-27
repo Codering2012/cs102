@@ -26,13 +26,17 @@ class Color:
     TEXT_DIALOGUE = (204, 115, 14)
     TEXT_INVENTORY_CNT = (255, 255, 0)
 
+screen_info = pygame.display.Info()
 
 class GameConfig:
     DEBUG: bool = True
     NAME: str = "STEAM Valley"
-    FPS: int = 60
-    WIDTH: int = 1248
-    HEIGHT: int = 768
+    FPS: int = 600
+    screen_info = pygame.display.Info()
+
+
+    WIDTH: int = screen_info.current_w
+    HEIGHT: int = screen_info.current_h
     TILE_SIZE: int = 48
     PLAYER_SOFT_EDGE_WIDTH: int = 300
 
@@ -54,8 +58,8 @@ class LevelLoadingBarConfig:
 
 class DialogueBoxConfig:
     SPRITE_PATH: Path = ASSET_DIR / "items" / "dialogue_box.png"
-    WIDTH: int = 800
-    HEIGHT: int = 200
+    WIDTH: int = 80
+    HEIGHT: int = 20
     SCALE: Tuple[int, int] = (WIDTH, HEIGHT)
     X: int = (GameConfig.WIDTH - WIDTH) // 2
     Y: int = GameConfig.HEIGHT - HEIGHT + 24
