@@ -28,11 +28,14 @@ class Color:
 
 
 class GameConfig:
-    DEBUG: bool = False
+    DEBUG: bool = True
     NAME: str = "STEAM Valley"
-    FPS: int = 60
-    WIDTH: int = 1248
-    HEIGHT: int = 768
+    FPS: int = 600
+    screen_info = pygame.display.Info()
+
+
+    WIDTH: int = screen_info.current_w
+    HEIGHT: int = screen_info.current_h
     TILE_SIZE: int = 48
     PLAYER_SOFT_EDGE_WIDTH: int = 300
 
@@ -44,7 +47,6 @@ class GameConfig:
 
     INGAME_MUSIC_VOLUME: float = 0.05
     SOUND_EFFECT_VOLUME: float = 0.18
-
 
 class LevelLoadingBarConfig:
     WIDTH: int = 600
