@@ -139,7 +139,7 @@ class ShadowBossConfig:
     DAMAGE: int = 1
     INITIAL_HP: int = 100
 
-    ANGRY_INTERVAL_MS: int = 7000
+    ANGRY_INTERVAL_MS: int = 4000
     ANGRY_DURATION_MS: int = 2000
 
     HURT_DURATION_MS: int = 500
@@ -148,8 +148,8 @@ class ShadowBossConfig:
 class ShadowBulletConfig:
     SPRITE_PATH: Path = ASSET_DIR / "items" / "shadow_bullet.png"
     SCALE: float = 0.05
-    SPEED: int = 5
-    GRAVITY: int = 0.3
+    SPEED: int = 8
+    GRAVITY: int = 0.2
     DAMAGE: int = 1
 
     # initial vertical movement
