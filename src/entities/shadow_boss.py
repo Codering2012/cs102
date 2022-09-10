@@ -13,7 +13,6 @@ logger = logging.getLogger(__name__)
 
 
 class ShadowBoss(Shadow):
-    """Boss (a large shadow)."""
 
     HP_BAR_HEIGHT: int = 20
     HP_TEXT_HEIGHT_OFFSET: int = -40
@@ -34,7 +33,7 @@ class ShadowBoss(Shadow):
         super()._update_action()
 
     def _get_angry(self):
-        for _ in range(5):
+        for _ in range(10):
             bullet_id = self.world.add_entity(
                 EntityType.SHADOW_BULLET,
                 self.rect.centerx + random.random() * self.rect.width / 2,
@@ -87,4 +86,5 @@ class ShadowBoss(Shadow):
             )
 
     def __del__(self):
-        GameEvent(EventType.VICTORY).post()
+        if self.hp <= 0:
+            GameEvent(EventType.VICTORY).post()
