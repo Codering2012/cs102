@@ -3,7 +3,7 @@ from typing import List
 
 import pygame
 
-from common import util
+from common.util import *
 from config import Color, PlayerInventoryConfig
 from entities.base_entity import BaseEntity
 
@@ -39,7 +39,7 @@ class PlayerInventory(BaseEntity):
                 x_y=(x, y),
                 scale=(PlayerInventoryConfig.TILE_SIZE, PlayerInventoryConfig.TILE_SIZE),
             )
-            util.display_text(
+            display_text(
                 screen,
                 text=str(cnt),
                 x=x + PlayerInventoryConfig.TILE_SIZE - 2,

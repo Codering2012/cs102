@@ -13,7 +13,7 @@ from common.types import (
     OBSTACLES_TYPES,
     EntityType,
 )
-from common.util import get_logger
+from common.util import *
 from config import GameConfig, LevelLoadingBarConfig, PlayerConfig, WorldData
 from entities.base_entity import BaseEntity
 from entities.entity_factory import EntityFactory
@@ -57,7 +57,7 @@ class World(BaseScene):
 
         if self.is_loading:
             self.loading_percent += LevelLoadingBarConfig.STEP
-            util.draw_loading_bar(self.screen, self.loading_percent)
+            draw_loading_bar(self.screen, self.loading_percent)
             if self.loading_percent >= 100:
                 self.is_loading = False
             return True
@@ -106,7 +106,7 @@ class World(BaseScene):
 
         if GameConfig.DEBUG:
             # Display abs_screen_offset
-            util.display_text(
+            display_text(
                 screen,
                 text=f"OFFSET: {self.abs_screen_offset}",
                 x=GameConfig.WIDTH - 250,
@@ -117,7 +117,7 @@ class World(BaseScene):
             # as viewed of the CSV file using excel.
             y_bottom = GameConfig.HEIGHT - 18
             for i in range(GameConfig.WIDTH // GameConfig.TILE_SIZE + 1):
-                util.display_text(
+                display_text(
                     screen,
                     str(i + 1 - self.abs_screen_offset // GameConfig.TILE_SIZE),
                     i * GameConfig.TILE_SIZE + self.abs_screen_offset % GameConfig.TILE_SIZE,
@@ -158,7 +158,7 @@ class World(BaseScene):
 
     def load_level(self, level_id: int):
         data = WorldData(level_id=level_id)
-        self.background = util.scale_image(
+        self.background = scale_image(
             # call .convert() to improve performance, learn more:
             # https://www.codeproject.com/Articles/5298051/Improving-Performance-in-Pygame-Speed-Up-Your-Game
             pygame.image.load(data.bg_path).convert(),

@@ -8,7 +8,7 @@ import pygame
 from pygame._sprite import collide_mask
 from pygame.rect import Rect
 
-from common import util
+from common.util import *
 from common.event import GameEvent
 from common.types import EntityType
 from common.util import now
@@ -52,7 +52,7 @@ class BaseEntity:
         self.flip_x: bool = False
 
         if self.sprite_path and self.sprite_path.exists():
-            self.image = util.scale_image(pygame.image.load(self.sprite_path), self.scale)
+            self.image = scale_image(pygame.image.load(self.sprite_path), self.scale)
             self.rect: Rect = self.image.get_rect()
             self.rect.x, self.rect.y = x, y
 
@@ -113,7 +113,7 @@ class BaseEntity:
         if x_y is None:
             x_y = (self.rect.x, self.rect.y)
 
-        image = util.scale_image(self.image, scale)
+        image = scale_image(self.image, scale)
 
         if self.flip_x:
             image = pygame.transform.flip(image, True, False)

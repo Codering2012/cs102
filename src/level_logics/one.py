@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from common.event import EventType, GameEvent
-from common.types import TRAMPOLINE_PART_TYPES, EntityType, QuestName
+from common.types import HONEYMAKER_PART_TYPES, TRAMPOLINE_PART_TYPES, EntityType, QuestName
 
 if TYPE_CHECKING:
     from worlds.world import World
@@ -16,7 +16,7 @@ def event_handler(world: World) -> None:
     for event in world.events:
         npc_chu_nhan_id = world.get_entity_id_by_type(EntityType.NPC_CHU_NHAN)
         npc_chu_nam_id = world.get_entity_id_by_type(EntityType.NPC_CHU_NAM)
-
+        npc_co_sen_id = world.get_entity_id_by_type(EntityType.NPC_CO_SEN)
         # After talking to this NPC (the last NPC in level 1), level 1 should end.
         if event.get_sender_id() == npc_chu_nhan_id and event.is_type(EventType.NPC_DIALOGUE_END):
             GameEvent(EventType.LEVEL_END).post()
@@ -42,3 +42,5 @@ def event_handler(world: World) -> None:
                 npc.rect.x + 76,
                 npc.rect.y + 156,
             )
+        # Player finishes the HONEYMAKER quest
+        

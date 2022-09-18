@@ -2,7 +2,7 @@ import logging
 
 import pygame
 
-from common import util
+from common.util import *
 from config import GameConfig
 from worlds.world_manager import WorldManager
 
@@ -29,7 +29,7 @@ class GameManager:
                 # If this value is too low compared to GameConfig.FPS, # ie. if actual FPS is ~40
                 # and GameConfig.FPS is set to 60, gameplay experience may become suboptimal,
                 # and we would need to debug and optimize for performance.
-                util.display_text(
+                display_text(
                     self.screen,
                     f"FPS: {self.clock.get_fps():.1f}",
                     x=GameConfig.WIDTH - 80,

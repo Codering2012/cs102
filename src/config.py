@@ -20,6 +20,7 @@ class Color:
     DEFAULT = (0, 0, 255)
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
+    BLUE = (0,191,255)
     LOADING_BAR = (255, 51, 153)
     BOSS_HP_BAR = (255, 51, 153)
     TEXT_DIALOGUE_SUBJECT = (19, 2, 150)
@@ -31,10 +32,11 @@ class Color:
 
 class GameConfig:
     DEBUG: bool = True
-    NAME: str = "STEAM Valley"
+    NAME: str = "Bee Valley"
     FPS: int = 60
-    WIDTH: int = 1248
-    HEIGHT: int = 768
+    screen_info = pygame.display.Info()
+    WIDTH: int = screen_info.current_w
+    HEIGHT: int = screen_info.current_h
     TILE_SIZE: int = 48
     PLAYER_SOFT_EDGE_WIDTH: int = 300
 
@@ -54,7 +56,7 @@ class GameConfig:
 class LevelLoadingBarConfig:
     WIDTH: int = 600
     HEIGHT: int = 100
-    STEP = 3 if not GameConfig.DEBUG else 10  # how fast the loading bar goes
+    STEP = 6 if not GameConfig.DEBUG else 10  # how fast the loading bar goes
 
 
 class DialogueBoxConfig:
@@ -81,9 +83,9 @@ class PlayerConfig:
     # minimal time until switching to the next sprite in sequence
     ANIMATION_INTERVAL_MS: int = 70 * 60 // GameConfig.FPS
     INITIAL_HP: int = 3
-    INVULNERABLE_DURATION_MS: int = 1000
+    INVULNERABLE_DURATION_MS: int = 10000
 
-    HURT_DURATION_MS: int = 80 * 4
+    HURT_DURATION_MS: int = 80 * 4 // GameConfig.FPS
 
     # TODO: we have 7 sprites for ActionType.THROW but only use 2-3 now
     THROW_DURATION_MS: int = 170 * 60 // GameConfig.FPS
@@ -112,15 +114,16 @@ class PlayerInventoryConfig:
 class PlayerBulletConfig:
     SPRITE_PATH: Path = ASSET_DIR / "items" / "player_bullet.png"
     SCALE: float = 0.7
-    SPEED: int = 35
-    GRAVITY: int = 2
-    DAMAGE: int = 10
+    SPEED: int = 50
+    GRAVITY: int = 3
+    
+    DAMAGE: int = 25
 
     # initial vertical movement
     INIT_DY: int = -10
 
     # the time between creation and deletion of entities of this type
-    TTL_MS: int = 400 * 60 // GameConfig.FPS
+    TTL_MS: int = 400 * 180 // GameConfig.FPS
 
 
 class ShadowConfig:
@@ -137,8 +140,8 @@ class ShadowBossConfig:
     ANIMATION_INTERVAL_MS: int = 200
     SPEED: int = 1
     DAMAGE: int = 1
-    INITIAL_HP: int = 100
-
+    INITIAL_HP: int = 5000
+    
     ANGRY_INTERVAL_MS: int = 4000
     ANGRY_DURATION_MS: int = 2000
 
@@ -147,7 +150,7 @@ class ShadowBossConfig:
 
 class ShadowBulletConfig:
     SPRITE_PATH: Path = ASSET_DIR / "items" / "shadow_bullet.png"
-    SCALE: float = 0.05
+    SCALE: float = 0.5
     SPEED: int = 8
     GRAVITY: int = 0.2
     DAMAGE: int = 1
@@ -156,16 +159,16 @@ class ShadowBulletConfig:
     INIT_DY: int = -15
 
     # the time between creation and deletion of entities of this type
-    TTL_MS: int = 3000
+    TTL_MS: int = 6000 * 1.5
 
 
 class EndingBurgerConfig:
-    SPRITE_PATH: Path = ASSET_DIR / "items" / "player_bullet.png"
+    SPRITE_PATH: Path = ASSET_DIR / "items" / "honey.png"
     SCALE: float = 0.8
     GRAVITY: float = 2.5
 
     # the time between creation and deletion of entities of this type
-    TTL_MS: int = 420
+    TTL_MS: int = 420 * 60 // GameConfig.FPS
 
 
 class TrampolineConfig:

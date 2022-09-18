@@ -4,7 +4,7 @@ from pygame.surface import Surface
 from common.event import EventType, GameEvent
 from common.sound import handle_music_events, load_music, play_sounds
 from common.types import EntityType
-from common.util import get_logger
+from common.util import *
 from config import GameConfig
 from worlds.bonus_level_end import BonusLevelEnd
 from worlds.defeated import Defeated

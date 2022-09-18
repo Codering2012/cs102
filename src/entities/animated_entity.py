@@ -7,7 +7,7 @@ import pygame
 from pygame.rect import Rect
 from pygame.surface import Surface
 
-from common import util
+from common.util import *
 from common.event import EventType, GameEvent
 from common.types import ActionType
 from common.util import now
@@ -16,7 +16,7 @@ from entities.movable_entity import MovableEntity
 if TYPE_CHECKING:
     from worlds.world import World
 
-logger = util.get_logger(__name__)
+logger = get_logger(__name__)
 
 
 class EntityAction:
@@ -195,7 +195,7 @@ class AnimatedEntity(MovableEntity):
                 if image_file.name.startswith(".") or not image_file.is_file():
                     continue
                 image = pygame.image.load(str(image_file))
-                action_sprites.append(util.scale_image(image, scale))
+                action_sprites.append(scale_image(image, scale))
                 cnt += 1
 
             sprites[action_type] = action_sprites

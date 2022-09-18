@@ -3,8 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Iterable, List, Optional, Sequence
 
 import pygame
-
-from common import util
+from common.util import *
 from common.event import EventType, GameEvent
 from common.types import ActionType, EntityType
 from common.util import now
@@ -12,11 +11,11 @@ from config import GameConfig, PlayerConfig, TrampolineConfig
 from entities.animated_entity import AnimatedEntity
 from entities.friendly_npc import FriendlyNpc
 from entities.trampoline import Trampoline
-
+import mouse
 if TYPE_CHECKING:
     from worlds.world import World
 
-logger = util.get_logger(__name__)
+logger = get_logger(__name__)
 
 
 class Player(AnimatedEntity):
@@ -113,6 +112,8 @@ class Player(AnimatedEntity):
                     self.move_left(True)
                 elif event.is_key_down(pygame.K_RIGHT, pygame.K_d):
                     self.move_right(True)
+                elif event.is_key_down(pygame.K_LEFT, pygame.K_a):
+                    self.move_left(True)
                 elif event.is_key_down(pygame.K_UP, pygame.K_SPACE, pygame.K_w):
                     self.jump()
 
@@ -143,7 +144,7 @@ class Player(AnimatedEntity):
                 self.npc_near_by = npc
                 GameEvent(EventType.PLAYER_NEAR_NPC, listener_id=npc.id).post()
                 break
-
+    
     def _pick_item_near_by(self):
         """
         If Player collides with a collectable entity, remove that entity from World,
@@ -186,7 +187,6 @@ class Player(AnimatedEntity):
         for shadow in self.world.get_entities(EntityType.SHADOW):
             if self.collide(shadow):
                 self._take_damage(shadow.damage)
-
     def _take_damage(self, damage: int):
         now_ms = now()
         if now_ms - self.last_hit_t < PlayerConfig.INVULNERABLE_DURATION_MS:

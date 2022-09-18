@@ -44,7 +44,10 @@ class Shadow(AnimatedEntity):
         for bullet in self.world.get_entities(EntityType.PLAYER_BULLET):
             if self.collide(bullet):
                 self.start_hurt(0)  # For Sound effects - skip hurt state
+                self.world.remove_entity(bullet.id)
                 self.die()
+                
 
         if self.collide(self.world.player):
             self.die()
+            

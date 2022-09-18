@@ -17,7 +17,7 @@ boss_died_at_ms: Optional[int] = None
 
 def event_handler(world: World) -> None:
     """
-    Logics for level 3 ending.
+    Logics for level 13 ending.
     """
     global boss_died_at_ms
     for event in world.events:
@@ -30,7 +30,7 @@ def event_handler(world: World) -> None:
 
     if boss_died_at_ms is not None:
         for _ in range(2):
-            world.add_entity(EntityType.ENDING_BURGER, x=random.randint(0, GameConfig.WIDTH), y=15)
+            world.add_entity(EntityType.ENDING_BURGER, x=random.randint(0, GameConfig.WIDTH), y=0)
 
         if now() > boss_died_at_ms + 4300:
             boss_died_at_ms = None

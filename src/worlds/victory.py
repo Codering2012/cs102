@@ -3,7 +3,7 @@ from typing import Sequence
 
 import pygame
 
-from common import util
+from common.util import *
 from common.event import EventType, GameEvent
 from common.util import now
 from config import DATA_DIR, Color, GameConfig
@@ -31,7 +31,7 @@ class Victory(BaseScene):
 
         self.credit_text_alpha = 0
 
-        self.background = util.scale_image(
+        self.background = scale_image(
             pygame.image.load(GameConfig.VICTORY_BACKGROUND).convert(),
             (GameConfig.WIDTH, GameConfig.HEIGHT),
         )
@@ -72,7 +72,7 @@ class Victory(BaseScene):
             else:
                 break
 
-            util.display_text(
+            display_text(
                 self.screen,
                 text=text,
                 x=x,
@@ -97,7 +97,7 @@ class Victory(BaseScene):
         line_height = 38
         self.credit_text_alpha += 1
         for i, line in enumerate(self.credit_text):
-            util.display_text(
+            display_text(
                 self.screen,
                 text=line,
                 x=345,

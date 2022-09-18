@@ -3,14 +3,14 @@ from __future__ import annotations
 import random
 from typing import TYPE_CHECKING, Sequence
 
-from common import util
+from common.util import *
 from common.event import EventType, GameEvent
 from entities.base_entity import BaseEntity
 
 if TYPE_CHECKING:
     from worlds.world import World
 
-logger = util.get_logger(__name__)
+logger = get_logger(__name__)
 
 
 class MovableEntity(BaseEntity):

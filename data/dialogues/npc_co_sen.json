@@ -1,8 +1,8 @@
 {
-    "name": "Chú Nam",
+    "name": "Cô Sen",
     "dialogues": [
         [{
-                "Subject": "Chú Nam",
+                "Subject": "Cô Sen",
                 "Line": "Em là Quốc Bảo, thực tập sinh mới phải không?"
             },
             {
@@ -10,29 +10,29 @@
                 "Line": "Dạ đúng rồi ạ."
             },
             {
-                "Subject": "Chú Nam",
+                "Subject": "Cô Sen",
                 "Line": "Em đi tham quan vui vẻ nhé."
             },
             {
                 "Subject": "Quốc Bảo",
-                "Line": "Nhưng ở đây đường đi tiếp cao quá ạ..."
+                "Line": "Cô có thể giúp con làm mật ong được không?"
             },
             {
-                "Subject": "Chú Nam",
-                "Line": " Aha, anh có thể làm một cái bật nhún!"
+                "Subject": "Cô Sen",
+                "Line": "Được nhưng em phải có hoa mới làm được"
             },
             {
-                "Subject": "Chú Nam",
-                "Line": "Em kiếm cho anh một số linh kiện để làm nhé?"
+                "Subject": "Cô Sen",
+                "Line": "Em kiếm cho cô một số linh kiện để làm nhé?"
             },
             {
                 "Subject": "Quốc Bảo",
                 "Line": "Được ạ!",
-                "QuestToStart": "TRAMPOLINE"
+                "QuestToStart": "HONEYMAKER"
             }
         ],
         [{
-            "Subject": "Chú Nam",
+            "Subject": "Cô Sen",
             "Line": "Em kiếm được đủ linh kiện chưa?"
         }]
     ]

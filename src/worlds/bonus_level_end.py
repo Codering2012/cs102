@@ -1,6 +1,6 @@
 from typing import Sequence
 
-from common import util
+from common.util import *
 from common.event import EventType, GameEvent
 from common.util import now
 from worlds.base_scene import BaseScene
@@ -16,7 +16,7 @@ class BonusLevelEnd(BaseScene):
     def tick(self, events: Sequence[GameEvent]) -> bool:
         super().tick(events)
         # TODO: clean up, move hardcoded values to configs
-        util.display_text(
+        display_text(
             self.screen,
             text="Congratulations! You won the bonus level!",
             x=200,
@@ -25,7 +25,7 @@ class BonusLevelEnd(BaseScene):
         )
         now_ms = now()
         if now_ms - self.created_at_ms > 1800:
-            util.display_text(
+            display_text(
                 self.screen, text="Going back to main menu ...", x=200, y=300, font_size=32
             )
         if now_ms - self.created_at_ms > 4100:

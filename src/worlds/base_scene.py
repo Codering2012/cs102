@@ -1,9 +1,9 @@
 from typing import Sequence
 
-from common import util
+from common.util import *
 from common.event import GameEvent
 
-logger = util.get_logger(__name__)
+logger = get_logger(__name__)
 
 
 class BaseScene:

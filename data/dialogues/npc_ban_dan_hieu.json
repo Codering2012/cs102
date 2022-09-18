@@ -1,0 +1,42 @@
+{
+    "name": "Hiệu trưởng",
+    "dialogues": [
+        [{
+                "Subject": "Hiệu trưởng",
+                "Line": "Chào em, em đi đâu thế"
+            },
+            {
+                "Subject": "Quốc Bảo",
+                "Line": "Em đang đi tìm chúa ong"
+            },
+            {
+                "Subject": "Hiệu trưởng",
+                "Line": "Trước khi em đi, em có thể lấy giùn cô 4 hủ mật ong được không"
+            },
+            {
+                "Subject": "Hiệu trưởng",
+                "Line": "Để cô ăn sandwich mà ko bị ong"
+            },
+            {
+                "Subject": "Quốc Bảo",
+                "Line": "Dạ nhưng em không biết làm mật ong ạ :("
+            },
+            {
+                "Subject": "Hiệu trưởng",
+                "Line": "Vậy kêu cô Sen phụ con nhé, cô sen ở dưới kia."
+            },
+            {
+                "Subject": "Quốc Bảo",
+                "Line": "Dạ thưa cô hiệu trưởng."
+            },
+            {
+                "Subject": "Hiểu trưởng",
+                "Line": "Chúc em vui vẻ nhé"
+            }
+        ],
+        [{
+            "Sucject": "Hiệu trưởng",
+            "Line": "Em có mật ong cho cô chưa, cô muốn ăn "
+        }]
+    ]
+}

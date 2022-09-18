@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Optional, Sequence
 
-from common import util
+from common.util import *
 from common.event import EventType, GameEvent
 from common.types import EntityType, QuestName
 from config import GameConfig, NpcConfig
@@ -12,7 +12,7 @@ from entities.dialogue_box import DialogueBox
 if TYPE_CHECKING:
     from worlds.world import World
 
-logger = util.get_logger(__name__)
+logger = get_logger(__name__)
 
 
 class FriendlyNpc(AnimatedEntity):
