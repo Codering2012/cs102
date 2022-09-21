@@ -36,7 +36,7 @@ class ShadowBoss(Shadow):
         super()._update_action()
 
     def _get_angry(self):
-        for _ in range(50):
+        for _ in range(10):
             bullet_id = self.world.add_entity(
                 EntityType.SHADOW_BULLET,
                 self.rect.centerx + random.random() * self.rect.width / 2,

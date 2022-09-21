@@ -164,11 +164,11 @@ class ShadowBulletConfig:
 
 class EndingBurgerConfig:
     SPRITE_PATH: Path = ASSET_DIR / "items" / "honey.png"
-    SCALE: float = 0.8
+    SCALE: float = 0.05
     GRAVITY: float = 2.5
 
     # the time between creation and deletion of entities of this type
-    TTL_MS: int = 420 * 60 // GameConfig.FPS
+    TTL_MS: int = 4200 * 100 // GameConfig.FPS
 
 
 class TrampolineConfig:
