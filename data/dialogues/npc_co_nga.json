@@ -1,8 +1,8 @@
 {
-    "name": "Cô Nga",
+    "name": "Cô Sen",
     "dialogues": [
         [{
-                "Subject": "Cô Nga",
+                "Subject": "Cô Sen",
                 "Line": "Xin chào em! Em tên là gì?"
             },
             {
@@ -10,12 +10,12 @@
                 "Line": "Xin chào cô! Em tên là Quốc Bảo. Em là thực tập sinh mới ạ."
             },
             {
-                "Subject": "Cô Nga",
+                "Subject": "Cô Sen",
                 "Line": "Ồ,chào mừng em đến với nhà máy sản suất mật ong."
 
             },
             {
-                "Subject": "Cô Nga",
+                "Subject": "Cô Sen",
                 "Line": "Cô chúc em có một kỳ thực tập vui vẻ nhé!"
             },
             {
@@ -24,7 +24,7 @@
             }
         ],
         [{
-            "Subject": "Cô Nga",
+            "Subject": "Cô Sen",
             "Line": "Em cứ tham quan văn phòng đi nhé."
         }]
     ]
